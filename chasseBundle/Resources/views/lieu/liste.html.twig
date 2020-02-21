@@ -1,0 +1,58 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block content %}
+    <style>
+        table {
+            width:100%;
+        }
+        table, th, td1,td2 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td1,td2{
+            padding: 15px;
+            text-align: left;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+<h1 align="center">Liste des lieux</h1>
+<table  border="2" align="center">
+    <tr >
+        <th>Nom</th>
+        <th>Description du lieu</th>
+        <th>Modifer</th>
+        <th>Supprimer</th>
+
+
+    </tr >
+    {% for An in lieu %}
+        <tr>
+            <td>
+                {{ An.nom}}
+            </td>
+            <td>
+                {{ An.descriptionLieu}}
+            </td>
+            <td width="10" align="center">
+                <a href="{{ path('updatelieu',{'id':An.id}) }}"><img style="width: 40px; height: 40px"  src="{{ asset ("img/modifier.jpg") }}" alt="update" /></a>
+            </td>
+
+            <td width="10" align="center">
+                <a href="{{ path('suplieu',{'id':An.id}) }}"><img style="width: 40px; height: 40px" src="{{ asset ("img/suprimer.png") }}" alt="Suprimer" /></a>
+            </td>
+
+            {# <td><a href="">Supprimer</a></td> #}
+
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

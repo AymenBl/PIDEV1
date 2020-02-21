@@ -1,0 +1,61 @@
+{% extends 'baseClient.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block container %}
+    <style>
+        table {
+            width:100%;
+        }
+        table, th, td1,td2 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td1,td2{
+            padding: 15px;
+            text-align: left;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+<div align="center">
+    {{ form(form) }}
+
+</div>
+
+    <h1 align="center">Liste des lieux</h1>
+    <table  border="2" align="center">
+        <tr >
+            <th>Annimal</th>
+            <th>Lieu</th>
+            <th>Date debut</th>
+            <th>Datefin</th>
+
+
+        </tr >
+        {% for An in saison %}
+            <tr>
+                <td>{{ An.animal.getNomAnnimal()}}</td>
+                <td>{{ An.lieu.getNom()}}</td>
+                <td>
+                    {{ An.datedebut|date}}
+                </td>
+                <td>
+                    {{ An.datefin|date }}
+                </td>
+
+
+
+                {# <td><a href="">Supprimer</a></td> #}
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

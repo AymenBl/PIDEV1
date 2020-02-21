@@ -1,0 +1,64 @@
+{% extends 'baseClient.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block container %}
+<style>
+    tr th{
+        font-weight:bold;
+    }
+    tr th, tr td{
+        padding:5px;
+
+    }
+    th{
+        border: 5px solid #C1DAD7;
+    }
+    td{
+        border: 5px solid #C1DAD7;
+
+    }
+    .c1{
+        background:#4b8c74;
+    }
+    .c2{
+        background:#74c476;
+    }
+    .c3{
+        background:#a4e56d;
+    }
+    .c4{
+        background:#cffc83;
+    }
+    .con{
+        margin: 7% 0%;
+    }
+</style>
+
+<div class="con" align="center" >
+<h1 align="center">Liste des Animaux</h1>
+
+    <table >
+    <tr >
+        <th class="c1" >Nom</th>
+        <th class="c1">Description</th>
+
+
+
+    </tr >
+    {% for An in annimal %}
+        <tr>
+            <td class="c2">
+                {{ An.nomAnnimal }}
+            </td>
+            <td class="c2">
+                {{ An.description }}
+            </td>
+
+
+            {# <td><a href="">Supprimer</a></td> #}
+
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+chasse_homepage:
+    path:     /
+    defaults: { _controller: chasseBundle:Default:index }
+
+addanimal:
+    path:     /addanimal
+    defaults: { _controller: chasseBundle:annimal:add }
+
+listanimal:
+    path:     /listanimal
+    defaults: { _controller: chasseBundle:annimal:list }
+
+listanimalclient:
+        path:     /listanimalclient
+        defaults: { _controller: chasseBundle:annimal:listanimalClient }
+
+listlieuClient:
+    path:     /listlieuClient
+    defaults: { _controller: chasseBundle:lieu:listlieuClient }
+
+supanimal:
+    path:     /supanimal/{id}
+    defaults: { _controller: chasseBundle:annimal:sup}
+
+
+updateanimal:
+    path:     /updateanimal/{id}
+    defaults: { _controller: chasseBundle:annimal:update }
+
+listlieu:
+    path:     /listlieu
+    defaults: { _controller: chasseBundle:lieu:list }
+
+
+
+addlieu:
+    path:     /addlieu
+    defaults: { _controller: chasseBundle:lieu:add}
+
+listsaison:
+    path:     /listsaison
+    defaults: { _controller: chasseBundle:saison:list }
+
+updatelieu:
+    path:     /updatelieu/{id}
+    defaults: { _controller: chasseBundle:lieu:update }
+
+
+addsaison:
+    path:     /addsaison
+    defaults: { _controller: chasseBundle:saison:add}
+
+
+suplieu:
+    path:     /suplieu/{id}
+    defaults: { _controller: chasseBundle:lieu:sup}
+
+supsaison:
+    path:     /supsaison/{id}
+    defaults: { _controller: chasseBundle:saison:sup}
+
+updatesaison:
+    path:     /updatesaison/{id}
+    defaults: { _controller: chasseBundle:saison:update}
+
+notif:
+    path:     /notif
+    defaults: { _controller: chasseBundle:annimal:sendNotification}
+
+recherch:
+    path:     /recherch
+    defaults: { _controller: chasseBundle:saison:Recherech}
+
